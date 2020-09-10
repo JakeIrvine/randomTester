@@ -13,6 +13,9 @@ public:
 	void setSeed(uint32_t seed) override;
 
 	uint32_t get() override;
+
+  std::string name() override;
+  std::string description() override;
 private:
 	long seed;
 };

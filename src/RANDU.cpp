@@ -4,6 +4,14 @@
 
 #include "RANDU.h"
 
+std::string RANDU::name() {
+  return "RANDU";
+}
+
+std::string RANDU::description() {
+  return "A random number genreatorl;";
+}
+
 void RANDU::setSeed(uint32_t seed) {
 	this->seed = seed;
 }

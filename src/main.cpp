@@ -9,7 +9,7 @@ void testPRNG();
 void testString();
 
 int main() {
-	std::cout << "Random Number Tester\nBy Jake Irvine\n" << std::endl;
+	std::cout << "Random Number Tester\nBy KernelPanic\n" << std::endl;
 	mainMenu();
 	return 0;
 }
@@ -37,12 +37,19 @@ void runPRNG() {
 	// Normally for something like this, I would use a fancy function pointer system to automatically generate the menu
 	// But that seems kinda impractical for something this small
 	// So I'm gonna use a big old switch statement
+
+  std::vector<PRNG*> prngs = {
+    new RANDU()
+  };
+
+  for (auto prng : prngs) {
+    std::cout << prng->name() << std::endl;
+  }
 	auto prng = RANDU();
-	prng.setSeed(1);
+	prng.setSeed(100);
 	for(int i=0; i<100; i++) {
 		std::cout << prng.get() << std::endl;
 	} // temporary code to test my RANDU implementation
-
 }
 void testPRNG() {
 	throw std::logic_error{"Not yet implemented"};
