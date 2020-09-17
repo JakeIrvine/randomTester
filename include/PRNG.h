@@ -16,6 +16,8 @@ public:
 
   virtual std::string name() = 0;
   virtual std::string description() = 0;
+
+
 };
 
 #endif //RANDOMTESTER_PRNG_H

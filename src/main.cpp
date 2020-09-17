@@ -33,23 +33,53 @@ void mainMenu() {
 	}
 }
 
+PRNG* choosePRNG() {
+	std::vector<PRNG*> prngs = {
+			new RANDU(),
+			new Zeroes(),
+			new Ones(),
+			new Alternating()
+	};
+
+	char button = 97;
+	std::vector<wchar_t> allowedChoices = {};
+
+	std::cout << "\nSelect PRNG:\n\n";
+
+	for (auto prng : prngs) {
+		std::string mnemonic = "[";
+		mnemonic += button;
+		mnemonic += "]: ";
+
+		std::cout << mnemonic << prng->name() << '\n';
+		allowedChoices.push_back(button++);
+	}
+
+	char choice = getChoice(">>> ", allowedChoices);
+
+	return prngs[choice - 97];
+
+}
+
 void runPRNG() {
 	// Normally for something like this, I would use a fancy function pointer system to automatically generate the menu
 	// But that seems kinda impractical for something this small
 	// So I'm gonna use a big old switch statement
 
-  std::vector<PRNG*> prngs = {
-    new RANDU()
-  };
 
-  for (auto prng : prngs) {
-    std::cout << prng->name() << std::endl;
-  }
-	auto prng = RANDU();
-	prng.setSeed(100);
-	for(int i=0; i<100; i++) {
-		std::cout << prng.get() << std::endl;
-	} // temporary code to test my RANDU implementation
+
+	auto prng = (choosePRNG());
+
+
+	prng->setSeed(getInt("Seed >>>"));
+
+	int numbersWanted = getInt("Quantity >>> ");
+
+	std::cout << std::string(50, '=') << '\n';
+	for(int i=0; i < numbersWanted; i++) {
+		std::cout << prng->get() << '\n';
+	}
+	std::cout << std::string(50, '=') << std::endl;
 }
 void testPRNG() {
 	throw std::logic_error{"Not yet implemented"};
@@ -57,3 +87,4 @@ void testPRNG() {
 void testString() {
 	throw std::logic_error{"Not yet implemented"};
 }
+

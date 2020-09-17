@@ -9,12 +9,22 @@
 
 class Zeroes : public PRNG {
 public:
+	std::string name() override;
+
+	std::string description() override;
+
+public:
 	void setSeed(uint32_t seed) override;
 
 	uint32_t get() override;
 };
 
 class Ones : public PRNG {
+public:
+	std::string name() override;
+
+	std::string description() override;
+
 public:
 	void setSeed(uint32_t seed) override;
 
@@ -26,6 +36,10 @@ public:
 	void setSeed(uint32_t seed) override;
 
 	uint32_t get() override;
+
+	std::string name() override;
+
+	std::string description() override;
 };
 
 
