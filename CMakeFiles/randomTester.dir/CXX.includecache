@@ -6,27 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/jake/Documents/College/EMC/randomTester/src/PRNG.cpp
-PRNG.h
-/home/jake/Documents/College/EMC/randomTester/src/PRNG.h
-
 /home/jake/Documents/College/EMC/randomTester/src/RANDU.cpp
 RANDU.h
 /home/jake/Documents/College/EMC/randomTester/src/RANDU.h
-
-/home/jake/Documents/College/EMC/randomTester/src/basic_PRNGs.cpp
-basic_PRNGs.h
-/home/jake/Documents/College/EMC/randomTester/src/basic_PRNGs.h
-
-/home/jake/Documents/College/EMC/randomTester/src/main.cpp
-iostream
--
-input.h
-/home/jake/Documents/College/EMC/randomTester/src/input.h
-RANDU.h
-/home/jake/Documents/College/EMC/randomTester/src/RANDU.h
-basic_PRNGs.h
-/home/jake/Documents/College/EMC/randomTester/src/basic_PRNGs.h
 
 include/PRNG.h
 cstdint
@@ -37,14 +19,4 @@ string
 include/RANDU.h
 PRNG.h
 include/PRNG.h
-
-include/basic_PRNGs.h
-PRNG.h
-include/PRNG.h
-
-include/input.h
-iostream
--
-vector
--
 

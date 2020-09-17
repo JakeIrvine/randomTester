@@ -9,7 +9,7 @@ std::string RANDU::name() {
 }
 
 std::string RANDU::description() {
-  return "A random number genreatorl;";
+  return "A linear congruential generator used since the 1960s, used in IBM mainframes. Described by Donald Knuth as 'horrible'";
 }
 
 void RANDU::setSeed(uint32_t seed) {
