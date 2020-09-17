@@ -1,6 +1,7 @@
 #include <iostream>
 #include "input.h"
 #include "RANDU.h"
+#include "glibcLCG.h"
 #include "basic_PRNGs.h"
 
 void mainMenu();
@@ -36,6 +37,7 @@ void mainMenu() {
 PRNG* choosePRNG() {
 	std::vector<PRNG*> prngs = {
 			new RANDU(),
+			new glibcLCG(),
 			new Zeroes(),
 			new Ones(),
 			new Alternating()
@@ -62,12 +64,6 @@ PRNG* choosePRNG() {
 }
 
 void runPRNG() {
-	// Normally for something like this, I would use a fancy function pointer system to automatically generate the menu
-	// But that seems kinda impractical for something this small
-	// So I'm gonna use a big old switch statement
-
-
-
 	auto prng = (choosePRNG());
 
 
@@ -81,9 +77,11 @@ void runPRNG() {
 	}
 	std::cout << std::string(50, '=') << std::endl;
 }
+
 void testPRNG() {
 	throw std::logic_error{"Not yet implemented"};
 }
+
 void testString() {
 	throw std::logic_error{"Not yet implemented"};
 }
